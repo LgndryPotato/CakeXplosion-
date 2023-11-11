@@ -16,6 +16,8 @@ sõnade_list = ["üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kahek
 # ekraani seadistamine
 ekraan = pygame.display.set_mode((ekraani_laius, ekraan_korgus))
 pygame.display.set_caption("CakeXplosion")
+icon = pygame.image.load("birthday-cake.png")
+pygame.display.set_icon(icon)
 
 # seadistan fondi
 font = pygame.font.Font(None, sõna_suurus)
