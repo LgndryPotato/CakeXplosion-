@@ -12,10 +12,15 @@ font = "Arial"
 sõna_suurus = 36
 sõnu = 1
 sõnade_list = ["üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme"]
-kookide_ikoonid_pruunid = ["hyperpruun.png", "hyperpruun1.png", "hyperpruun2.png", "hyperpruun3.png", "hyperpruun4.png","hyperpruun5.png", "hyperpruun6.png", "hyperpruun7.png", "hyperpruun8.png"]
+kookide_ikoonid_pruunid = ["hyperpruun.png", "hyperpruun1.png", "hyperpruun2.png", "hyperpruun3.png", "hyperpruun4.png", 
+                           "hyperpruun5.png", "hyperpruun6.png", "hyperpruun7.png", "hyperpruun8.png"]
 kookide_ikoonid_valged = ["hypervalge.png", "hypervalge1.png", "hypervalge2.png", "hypervalge3.png"]
-backgrounds_tumedad = ["pruunback.png", "pruunback1.png", "pruunback2.png", "pruunback3.png", "pruunback4.png", "pruunback5.png", "pruunback6.png", "pruunback7.png", "pruunback8.png", "pruunback9.png", "pruunback10.png", "pruunback11.png", "pruunback12.png"]
-backgrounds_heledad = ["valgeback.png", "valgeback1.png", "valgeback2.png", "valgeback3.png", "valgeback4.png", "valgeback5.png", "valgeback6.png", "valgeback7.png", "valgeback8.png", "valgeback9.png", "valgeback10.png", "valgeback11.png", "valgeback12.png", "valgeback13.png", "valgeback14.png"]
+backgrounds_tumedad = ["pruunback.png", "pruunback1.png", "pruunback2.png", "pruunback3.png", "pruunback4.png", 
+                       "pruunback5.png", "pruunback6.png", "pruunback7.png", "pruunback8.png", "pruunback9.png", 
+                       "pruunback10.png", "pruunback11.png", "pruunback12.png"]
+backgrounds_heledad = ["valgeback.png", "valgeback1.png", "valgeback2.png", "valgeback3.png", "valgeback4.png", 
+                       "valgeback5.png", "valgeback6.png", "valgeback7.png", "valgeback8.png", "valgeback9.png", 
+                       "valgeback10.png", "valgeback11.png", "valgeback12.png", "valgeback13.png", "valgeback14.png"]
 
 # ekraani seadistamine
 ekraan = pygame.display.set_mode((ekraani_laius, ekraan_korgus))
