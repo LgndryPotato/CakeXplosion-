@@ -5,22 +5,57 @@ import sys
 pygame.init()
 
 # konstandid
-ekraani_laius, ekraan_korgus = 800, 600
+ekraani_laius, ekraan_korgus = 1280, 720
 valge = (255, 255, 255)
 must = (0, 0, 0)
 font = "Arial"
 sõna_suurus = 36
 sõnu = 1
 sõnade_list = ["üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme"]
-kookide_ikoonid_pruunid = ["hyperpruun.png", "hyperpruun1.png", "hyperpruun2.png", "hyperpruun3.png", "hyperpruun4.png", 
-                           "hyperpruun5.png", "hyperpruun6.png", "hyperpruun7.png", "hyperpruun8.png"]
-kookide_ikoonid_valged = ["hypervalge.png", "hypervalge1.png", "hypervalge2.png", "hypervalge3.png"]
-backgrounds_tumedad = ["pruunback.png", "pruunback1.png", "pruunback2.png", "pruunback3.png", "pruunback4.png", 
-                       "pruunback5.png", "pruunback6.png", "pruunback7.png", "pruunback8.png", "pruunback9.png", 
-                       "pruunback10.png", "pruunback11.png", "pruunback12.png"]
-backgrounds_heledad = ["valgeback.png", "valgeback1.png", "valgeback2.png", "valgeback3.png", "valgeback4.png", 
-                       "valgeback5.png", "valgeback6.png", "valgeback7.png", "valgeback8.png", "valgeback9.png", 
-                       "valgeback10.png", "valgeback11.png", "valgeback12.png", "valgeback13.png", "valgeback14.png"]
+kookide_ikoonid_pruunid1 = pygame.image.load("hyperpruun.png")
+kookide_ikoonid_pruunid2 = pygame.image.load("hyperpruun1.png")
+kookide_ikoonid_pruunid3 = pygame.image.load("hyperpruun2.png")
+kookide_ikoonid_pruunid4 = pygame.image.load("hyperpruun3.png")
+kookide_ikoonid_pruunid5 = pygame.image.load("hyperpruun4.png")
+kookide_ikoonid_pruunid6 = pygame.image.load("hyperpruun5.png")
+kookide_ikoonid_pruunid7 = pygame.image.load("hyperpruun6.png")
+kookide_ikoonid_pruunid8 = pygame.image.load("hyperpruun7.png")
+kookide_ikoonid_pruunid9 = pygame.image.load("hyperpruun8.png")
+
+kookide_ikoonid_valged1 = pygame.image.load("hypervalge.png")
+kookide_ikoonid_valged2 = pygame.image.load("hypervalge1.png")
+kookide_ikoonid_valged3 = pygame.image.load("hypervalge2.png")
+kookide_ikoonid_valged4 = pygame.image.load("hypervalge3.png")
+
+backgrounds_tumedad1 = pygame.image.load("pruunback.png")
+backgrounds_tumedad2 = pygame.image.load("pruunback1.png")
+backgrounds_tumedad3 = pygame.image.load("pruunback2.png")
+backgrounds_tumedad4 = pygame.image.load("pruunback3.png")
+backgrounds_tumedad5 = pygame.image.load("pruunback4.png")
+backgrounds_tumedad6 = pygame.image.load("pruunback5.png")
+backgrounds_tumedad7 = pygame.image.load("pruunback6.png")
+backgrounds_tumedad8 = pygame.image.load("pruunback7.png")
+backgrounds_tumedad9 = pygame.image.load("pruunback8.png")
+backgrounds_tumedad10 = pygame.image.load("pruunback9.png")
+backgrounds_tumedad11 = pygame.image.load("pruunback11.png")
+backgrounds_tumedad12 = pygame.image.load("pruunback12.png")
+
+backgrounds_heledad1 = pygame.image.load("valgeback.png")
+backgrounds_heledad2 = pygame.image.load("valgeback1.png")
+backgrounds_heledad3 = pygame.image.load("valgeback2.png")
+backgrounds_heledad4 = pygame.image.load("valgeback3.png")
+backgrounds_heledad5 = pygame.image.load("valgeback4.png")
+backgrounds_heledad6 = pygame.image.load("valgeback5.png")
+backgrounds_heledad7 = pygame.image.load("valgeback6.png")
+backgrounds_heledad8 = pygame.image.load("valgeback7.png")
+backgrounds_heledad9 = pygame.image.load("valgeback8.png")
+backgrounds_heledad10 = pygame.image.load("valgeback9.png")
+backgrounds_heledad11 = pygame.image.load("valgeback10.png")
+backgrounds_heledad12 = pygame.image.load("valgeback11.png")
+backgrounds_heledad13 = pygame.image.load("valgeback12.png")
+backgrounds_heledad14 = pygame.image.load("valgeback13.png")
+backgrounds_heledad15 = pygame.image.load("valgeback14.png")
+
 
 # ekraani seadistamine
 ekraan = pygame.display.set_mode((ekraani_laius, ekraan_korgus))
@@ -59,6 +94,21 @@ programm_töötab = True
 while programm_töötab:
 
     ekraan.fill(must)
+    if level == 1: ekraan.blit(backgrounds_tumedad1, (0,0))
+    if level == 2: ekraan.blit(backgrounds_heledad5, (0, 0))
+    if level == 3: ekraan.blit(backgrounds_tumedad3, (0, 0))
+    if level == 4: ekraan.blit(backgrounds_heledad4, (0, 0))
+    if level == 5: ekraan.blit(backgrounds_tumedad5, (0, 0))
+    if level == 6: ekraan.blit(backgrounds_heledad6, (0, 0))
+    if level == 7: ekraan.blit(backgrounds_tumedad7, (0, 0))
+    if level == 8: ekraan.blit(backgrounds_heledad10, (0, 0))
+    if level == 9: ekraan.blit(backgrounds_tumedad9, (0, 0))
+    if level == 10: ekraan.blit(backgrounds_heledad11, (0, 0))
+    if level == 11: ekraan.blit(backgrounds_tumedad11, (0, 0))
+    if level == 12: ekraan.blit(backgrounds_heledad12, (0, 0))
+    if level == 13: ekraan.blit(backgrounds_tumedad8, (0, 0))
+    if level == 14: ekraan.blit(backgrounds_heledad2, (0, 0))
+    if level == 15: ekraan.blit(backgrounds_tumedad4, (0, 0))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -100,7 +150,7 @@ while programm_töötab:
     ekraan.blit(skoor_surface, (10, 10))
 
     elud_surface = font.render("Elud: {}".format(elud), True, valge)
-    ekraan.blit(elud_surface, (700, 560))
+    ekraan.blit(elud_surface, (1190, 690))
 
     # kontrolli kas on jõutud uuele levelile. praegu iga 10 punkti tagant level suureneb
     if skoor >= level * 10:
