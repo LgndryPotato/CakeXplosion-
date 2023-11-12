@@ -28,33 +28,85 @@ kookide_ikoonid_valged3 = pygame.image.load("hypervalge2.png")
 kookide_ikoonid_valged4 = pygame.image.load("hypervalge3.png")
 
 backgrounds_tumedad1 = pygame.image.load("pruunback.png")
+backgrounds_tumedad1 = pygame.transform.smoothscale(backgrounds_tumedad1, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad2 = pygame.image.load("pruunback1.png")
+backgrounds_tumedad2 = pygame.transform.smoothscale(backgrounds_tumedad2, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad3 = pygame.image.load("pruunback2.png")
+backgrounds_tumedad3 = pygame.transform.smoothscale(backgrounds_tumedad3, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad4 = pygame.image.load("pruunback3.png")
+backgrounds_tumedad4 = pygame.transform.smoothscale(backgrounds_tumedad4, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad5 = pygame.image.load("pruunback4.png")
+backgrounds_tumedad5 = pygame.transform.smoothscale(backgrounds_tumedad5, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad6 = pygame.image.load("pruunback5.png")
+backgrounds_tumedad6 = pygame.transform.smoothscale(backgrounds_tumedad6, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad7 = pygame.image.load("pruunback6.png")
+backgrounds_tumedad7 = pygame.transform.smoothscale(backgrounds_tumedad7, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad8 = pygame.image.load("pruunback7.png")
+backgrounds_tumedad8 = pygame.transform.smoothscale(backgrounds_tumedad8, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad9 = pygame.image.load("pruunback8.png")
+backgrounds_tumedad9 = pygame.transform.smoothscale(backgrounds_tumedad9, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad10 = pygame.image.load("pruunback9.png")
+backgrounds_tumedad10 = pygame.transform.smoothscale(backgrounds_tumedad10, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad11 = pygame.image.load("pruunback11.png")
+backgrounds_tumedad11 = pygame.transform.smoothscale(backgrounds_tumedad11, (ekraani_laius, ekraan_korgus))
+
 backgrounds_tumedad12 = pygame.image.load("pruunback12.png")
+backgrounds_tumedad12 = pygame.transform.smoothscale(backgrounds_tumedad12, (ekraani_laius, ekraan_korgus))
 
 backgrounds_heledad1 = pygame.image.load("valgeback.png")
+backgrounds_heledad1 = pygame.transform.smoothscale(backgrounds_heledad1, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad2 = pygame.image.load("valgeback1.png")
+backgrounds_heledad2 = pygame.transform.smoothscale(backgrounds_heledad2, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad3 = pygame.image.load("valgeback2.png")
+backgrounds_heledad3 = pygame.transform.smoothscale(backgrounds_heledad3, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad4 = pygame.image.load("valgeback3.png")
+backgrounds_heledad4 = pygame.transform.smoothscale(backgrounds_heledad4, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad5 = pygame.image.load("valgeback4.png")
+backgrounds_heledad5 = pygame.transform.smoothscale(backgrounds_heledad5, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad6 = pygame.image.load("valgeback5.png")
+backgrounds_heledad6 = pygame.transform.smoothscale(backgrounds_heledad6, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad7 = pygame.image.load("valgeback6.png")
+backgrounds_heledad7 = pygame.transform.smoothscale(backgrounds_heledad7, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad8 = pygame.image.load("valgeback7.png")
+backgrounds_heledad8 = pygame.transform.smoothscale(backgrounds_heledad8, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad9 = pygame.image.load("valgeback8.png")
+backgrounds_heledad9 = pygame.transform.smoothscale(backgrounds_heledad9, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad10 = pygame.image.load("valgeback9.png")
+backgrounds_heledad10 = pygame.transform.smoothscale(backgrounds_heledad10, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad11 = pygame.image.load("valgeback10.png")
+backgrounds_heledad11 = pygame.transform.smoothscale(backgrounds_heledad11, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad12 = pygame.image.load("valgeback11.png")
+backgrounds_heledad12 = pygame.transform.smoothscale(backgrounds_heledad12, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad13 = pygame.image.load("valgeback12.png")
+backgrounds_heledad13 = pygame.transform.smoothscale(backgrounds_heledad13, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad14 = pygame.image.load("valgeback13.png")
+backgrounds_heledad14 = pygame.transform.smoothscale(backgrounds_heledad14, (ekraani_laius, ekraan_korgus))
+
 backgrounds_heledad15 = pygame.image.load("valgeback14.png")
+backgrounds_heledad15 = pygame.transform.smoothscale(backgrounds_heledad15, (ekraani_laius, ekraan_korgus))
 
 
 # ekraani seadistamine
