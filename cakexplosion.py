@@ -27,6 +27,11 @@ kookide_ikoonid_valged2 = pygame.image.load("hypervalge1.png")
 kookide_ikoonid_valged3 = pygame.image.load("hypervalge2.png")
 kookide_ikoonid_valged4 = pygame.image.load("hypervalge3.png")
 
+kookide_ikoonide_list_tumedad = [kookide_ikoonid_pruunid1, kookide_ikoonid_pruunid2, kookide_ikoonid_pruunid3, kookide_ikoonid_pruunid4,
+                                 kookide_ikoonid_pruunid5, kookide_ikoonid_pruunid6, kookide_ikoonid_pruunid7, kookide_ikoonid_pruunid8,
+                                 kookide_ikoonid_pruunid9]
+kookide_ikoonide_list_valged = [kookide_ikoonid_valged1, kookide_ikoonid_valged2, kookide_ikoonid_valged3, kookide_ikoonid_valged4]
+
 backgrounds_tumedad1 = pygame.image.load("pruunback.png")
 backgrounds_tumedad1 = pygame.transform.smoothscale(backgrounds_tumedad1, (ekraani_laius, ekraan_korgus))
 
@@ -51,18 +56,6 @@ backgrounds_tumedad7 = pygame.transform.smoothscale(backgrounds_tumedad7, (ekraa
 backgrounds_tumedad8 = pygame.image.load("pruunback7.png")
 backgrounds_tumedad8 = pygame.transform.smoothscale(backgrounds_tumedad8, (ekraani_laius, ekraan_korgus))
 
-backgrounds_tumedad9 = pygame.image.load("pruunback8.png")
-backgrounds_tumedad9 = pygame.transform.smoothscale(backgrounds_tumedad9, (ekraani_laius, ekraan_korgus))
-
-backgrounds_tumedad10 = pygame.image.load("pruunback9.png")
-backgrounds_tumedad10 = pygame.transform.smoothscale(backgrounds_tumedad10, (ekraani_laius, ekraan_korgus))
-
-backgrounds_tumedad11 = pygame.image.load("pruunback11.png")
-backgrounds_tumedad11 = pygame.transform.smoothscale(backgrounds_tumedad11, (ekraani_laius, ekraan_korgus))
-
-backgrounds_tumedad12 = pygame.image.load("pruunback12.png")
-backgrounds_tumedad12 = pygame.transform.smoothscale(backgrounds_tumedad12, (ekraani_laius, ekraan_korgus))
-
 backgrounds_heledad1 = pygame.image.load("valgeback.png")
 backgrounds_heledad1 = pygame.transform.smoothscale(backgrounds_heledad1, (ekraani_laius, ekraan_korgus))
 
@@ -83,30 +76,6 @@ backgrounds_heledad6 = pygame.transform.smoothscale(backgrounds_heledad6, (ekraa
 
 backgrounds_heledad7 = pygame.image.load("valgeback6.png")
 backgrounds_heledad7 = pygame.transform.smoothscale(backgrounds_heledad7, (ekraani_laius, ekraan_korgus))
-
-backgrounds_heledad8 = pygame.image.load("valgeback7.png")
-backgrounds_heledad8 = pygame.transform.smoothscale(backgrounds_heledad8, (ekraani_laius, ekraan_korgus))
-
-backgrounds_heledad9 = pygame.image.load("valgeback8.png")
-backgrounds_heledad9 = pygame.transform.smoothscale(backgrounds_heledad9, (ekraani_laius, ekraan_korgus))
-
-backgrounds_heledad10 = pygame.image.load("valgeback9.png")
-backgrounds_heledad10 = pygame.transform.smoothscale(backgrounds_heledad10, (ekraani_laius, ekraan_korgus))
-
-backgrounds_heledad11 = pygame.image.load("valgeback10.png")
-backgrounds_heledad11 = pygame.transform.smoothscale(backgrounds_heledad11, (ekraani_laius, ekraan_korgus))
-
-backgrounds_heledad12 = pygame.image.load("valgeback11.png")
-backgrounds_heledad12 = pygame.transform.smoothscale(backgrounds_heledad12, (ekraani_laius, ekraan_korgus))
-
-backgrounds_heledad13 = pygame.image.load("valgeback12.png")
-backgrounds_heledad13 = pygame.transform.smoothscale(backgrounds_heledad13, (ekraani_laius, ekraan_korgus))
-
-backgrounds_heledad14 = pygame.image.load("valgeback13.png")
-backgrounds_heledad14 = pygame.transform.smoothscale(backgrounds_heledad14, (ekraani_laius, ekraan_korgus))
-
-backgrounds_heledad15 = pygame.image.load("valgeback14.png")
-backgrounds_heledad15 = pygame.transform.smoothscale(backgrounds_heledad15, (ekraani_laius, ekraan_korgus))
 
 
 # ekraani seadistamine
@@ -147,20 +116,20 @@ while programm_töötab:
 
     ekraan.fill(must)
     if level == 1: ekraan.blit(backgrounds_tumedad1, (0,0))
-    if level == 2: ekraan.blit(backgrounds_heledad5, (0, 0))
-    if level == 3: ekraan.blit(backgrounds_tumedad3, (0, 0))
-    if level == 4: ekraan.blit(backgrounds_heledad4, (0, 0))
-    if level == 5: ekraan.blit(backgrounds_tumedad5, (0, 0))
-    if level == 6: ekraan.blit(backgrounds_heledad6, (0, 0))
-    if level == 7: ekraan.blit(backgrounds_tumedad7, (0, 0))
-    if level == 8: ekraan.blit(backgrounds_heledad10, (0, 0))
-    if level == 9: ekraan.blit(backgrounds_tumedad9, (0, 0))
-    if level == 10: ekraan.blit(backgrounds_heledad11, (0, 0))
-    if level == 11: ekraan.blit(backgrounds_tumedad11, (0, 0))
-    if level == 12: ekraan.blit(backgrounds_heledad12, (0, 0))
-    if level == 13: ekraan.blit(backgrounds_tumedad8, (0, 0))
-    if level == 14: ekraan.blit(backgrounds_heledad2, (0, 0))
-    if level == 15: ekraan.blit(backgrounds_tumedad4, (0, 0))
+    if level == 2: ekraan.blit(backgrounds_heledad1, (0, 0))
+    if level == 3: ekraan.blit(backgrounds_tumedad2, (0, 0))
+    if level == 4: ekraan.blit(backgrounds_heledad2, (0, 0))
+    if level == 5: ekraan.blit(backgrounds_tumedad3, (0, 0))
+    if level == 6: ekraan.blit(backgrounds_heledad3, (0, 0))
+    if level == 7: ekraan.blit(backgrounds_tumedad4, (0, 0))
+    if level == 8: ekraan.blit(backgrounds_heledad4, (0, 0))
+    if level == 9: ekraan.blit(backgrounds_tumedad5, (0, 0))
+    if level == 10: ekraan.blit(backgrounds_heledad5, (0, 0))
+    if level == 11: ekraan.blit(backgrounds_tumedad6, (0, 0))
+    if level == 12: ekraan.blit(backgrounds_heledad6, (0, 0))
+    if level == 13: ekraan.blit(backgrounds_tumedad7, (0, 0))
+    if level == 14: ekraan.blit(backgrounds_heledad7, (0, 0))
+    if level == 15: ekraan.blit(backgrounds_tumedad8, (0, 0))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
