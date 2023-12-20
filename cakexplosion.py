@@ -13,6 +13,8 @@ must = (0, 0, 0)
 roosa = (255,192,203)
 font = "Arial"
 sõna_suurus = 36
+sõna_suurus_start = 50
+sõna_suurus_leaderboard = 40
 sõnu = 1
 
 kookide_ikoonid_pruunid1 = pygame.transform.scale(pygame.image.load("hyperpruun.png"), (150, 150))
@@ -90,6 +92,8 @@ pygame.display.set_icon(icon)
 
 # seadistan fondi
 font = pygame.font.Font(None, sõna_suurus)
+font_main_start = pygame.font.Font(None, sõna_suurus_start)
+font_main_leaderboard = pygame.font.Font(None, sõna_suurus_leaderboard)
 
 # suvaline sõna veebist
 def suvaline_sõna_veebist(url):
@@ -127,10 +131,10 @@ clock = pygame.time.Clock()
 def main_menu():
     menu = True
     # nupud
-    start_button = pygame.Rect(ekraani_laius//2 - 50, ekraan_korgus//2 - 50, 100, 50)
-    leaderboard_button = pygame.Rect(ekraani_laius//2 - 75, ekraan_korgus//2 + 10, 150, 50)
-    start_tekst = font.render("Start", True, must)
-    leaderboard_tekst = font.render("Leaderboard", True, must)
+    start_button = pygame.Rect(ekraani_laius//2 - 200//2, ekraan_korgus//2 - 100//2 - 50, 200, 100)
+    leaderboard_button = pygame.Rect(ekraani_laius//2 - 200//2, ekraan_korgus//2 + 10, 200, 100)
+    start_tekst = font_main_start.render("Start", True, must)
+    leaderboard_tekst = font_main_leaderboard.render("Edetabel", True, must)
     while menu:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -178,7 +182,7 @@ def display_leaderboard():
     leaderboard_screen = pygame.display.set_mode((ekraani_laius, ekraan_korgus))
     pygame.display.set_caption("Leaderboard")
 
-# Leaderboardi runnimine
+    # Leaderboardi runnimine
     running = True
     while running:
         leaderboard_screen.fill(must)
@@ -189,7 +193,7 @@ def display_leaderboard():
                 if event.key == pygame.K_ESCAPE:
                     running = False
 
-# Kuvab skoorid(parim esimene jn)
+        # Kuvab skoorid(parim esimene jn)
         for i, score in enumerate(scores):
             score_text = font.render(f"{i + 1}. {score}", True, valge)
             leaderboard_screen.blit(score_text, (ekraani_laius // 2 - score_text.get_width() // 2, 50 + i * 40))
@@ -198,6 +202,8 @@ def display_leaderboard():
 
     main_menu()
 
+def loo_sprinkild(x, y):
+    ekraan.blit(sprinkles_ikoon, (x, y))
 def game_loop():
     # muutujad
     elud = 3
@@ -206,6 +212,7 @@ def game_loop():
     kiirus = 1
     sõna_ilmumise_aeg = pygame.time.get_ticks()
     sisend = ""
+    sprinkles_start_time = None
     sõnad_ekraanil = [uus_sõna() for _ in range(sõnu)]
     programm_töötab = True
     while programm_töötab:
@@ -258,9 +265,15 @@ def game_loop():
                 skoor += 1
                 sõnad_ekraanil.remove(sõna)
                 sisend = ""  # teeb sisendi akna vms tühjaks
+                sprinkles_start_time = pygame.time.get_ticks()
             elif sõna["y"] > ekraan_korgus:
                 elud -= 1
                 sõnad_ekraanil.remove(sõna)
+
+        if sprinkles_start_time is not None and pygame.time.get_ticks() - sprinkles_start_time < 200:
+            ekraan.blit(sprinkles_ikoon, (sõna["x"] - 50, sõna["y"] - 75))
+
+
         if level == 1 or level == 3 or level == 5 or level == 7 or level == 9 or level == 11 or level == 13 or level == 15:
             input_surface = font.render(sisend, True, valge)
             ekraan.blit(input_surface, (10, ekraan_korgus - sõna_suurus))
@@ -287,6 +300,7 @@ def game_loop():
         else:
             mitmes_level = font.render("Level: {}".format(level), True, must)
             ekraan.blit(mitmes_level, (ekraani_laius - 100, 10))
+
         # kontrolli kas mäng läbi. Kui -1 punkti ehk alla 0 punkti siis mäng labi
         if elud <= 0:
             font_kaotus = pygame.font.Font(None, 72)
