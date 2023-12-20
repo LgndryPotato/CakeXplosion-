@@ -16,6 +16,8 @@ sõna_suurus = 36
 sõna_suurus_start = 50
 sõna_suurus_leaderboard = 40
 sõnu = 1
+sprinkles_start_time = None
+sprinkles_position = None
 
 kookide_ikoonid_pruunid1 = pygame.transform.scale(pygame.image.load("hyperpruun.png"), (150, 150))
 kookide_ikoonid_pruunid2 = pygame.transform.scale(pygame.image.load("hyperpruun1.png"), (150, 150))
@@ -263,6 +265,7 @@ def game_loop():
             # kui kirjutad sõna mis ekraanil siis automaatselt võtab selle ära ei pea enterit vajutama
             if sisend == sõna["sõna"]:
                 skoor += 1
+                sprinkles_position = (sõna["x"], sõna["y"])
                 sõnad_ekraanil.remove(sõna)
                 sisend = ""  # teeb sisendi akna vms tühjaks
                 sprinkles_start_time = pygame.time.get_ticks()
@@ -271,7 +274,7 @@ def game_loop():
                 sõnad_ekraanil.remove(sõna)
 
         if sprinkles_start_time is not None and pygame.time.get_ticks() - sprinkles_start_time < 200:
-            ekraan.blit(sprinkles_ikoon, (sõna["x"] - 50, sõna["y"] - 75))
+            ekraan.blit(sprinkles_ikoon, (sprinkles_position[0] - 50, sprinkles_position[1] - 75))
 
 
         if level == 1 or level == 3 or level == 5 or level == 7 or level == 9 or level == 11 or level == 13 or level == 15:
