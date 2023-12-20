@@ -1,6 +1,8 @@
-import pygame
 import random
 import sys
+import requests
+import pygame
+from bs4 import BeautifulSoup
 
 pygame.init()
 
@@ -11,7 +13,7 @@ must = (0, 0, 0)
 font = "Arial"
 sõna_suurus = 36
 sõnu = 1
-sõnade_list = ["üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme"]
+
 kookide_ikoonid_pruunid1 = pygame.transform.scale(pygame.image.load("hyperpruun.png"), (150, 150))
 kookide_ikoonid_pruunid2 = pygame.transform.scale(pygame.image.load("hyperpruun1.png"), (150, 150))
 kookide_ikoonid_pruunid3 = pygame.transform.scale(pygame.image.load("hyperpruun2.png"), (150, 150))
@@ -77,9 +79,6 @@ backgrounds_heledad6 = pygame.transform.smoothscale(backgrounds_heledad6, (ekraa
 backgrounds_heledad7 = pygame.image.load("valgeback6.png")
 backgrounds_heledad7 = pygame.transform.smoothscale(backgrounds_heledad7, (ekraani_laius, ekraan_korgus))
 
-backgrounds_heledad8 = pygame.image.load("valgeback7.png")
-backgrounds_heledad8 = pygame.transform.smoothscale(backgrounds_heledad7, (ekraani_laius, ekraan_korgus))
-
 
 # ekraani seadistamine
 ekraan = pygame.display.set_mode((ekraani_laius, ekraan_korgus))
@@ -90,9 +89,20 @@ pygame.display.set_icon(icon)
 # seadistan fondi
 font = pygame.font.Font(None, sõna_suurus)
 
+# suvaline sõna veebist
+def suvaline_sõna_veebist(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    sõnad = []
+    for p in soup.select('p'):
+        sõnad.append(p.text.split())
+    return random.choice(sõnad)
+
 # uue sõna genereerimine
 def uus_sõna():
-    sõna = random.choice(sõnade_list)
+    url = "https://kodu.ut.ee/~tristanl/sõnad.html"
+    sõna = random.choice(suvaline_sõna_veebist(url))
     kook = random.choice(kookide_ikoonide_list)
 
     if kook in [kookide_ikoonid_valged1, kookide_ikoonid_valged2, kookide_ikoonid_valged3,kookide_ikoonid_valged4]: värv = must
@@ -104,8 +114,6 @@ def uus_sõna():
         "värv": värv,
         "ikoon": kook
     }
-
-
 
 # ekraanil olevate sõnade list
 sõnad_ekraanil = [uus_sõna() for _ in range(sõnu)]
@@ -139,7 +147,7 @@ def main_menu():
                     display_leaderboard()
 
         # main menu pilt jms
-        ekraan.blit(backgrounds_heledad8, (0, 0))
+        ekraan.blit(backgrounds_tumedad8, (0, 0))
         pygame.draw.rect(ekraan, valge, start_button)
         pygame.draw.rect(ekraan, valge, leaderboard_button)
 
@@ -168,7 +176,7 @@ def display_leaderboard():
     leaderboard_screen = pygame.display.set_mode((ekraani_laius, ekraan_korgus))
     pygame.display.set_caption("Leaderboard")
 
-    # Game loop for the leaderboard screen
+# Leaderboardi runnimine
     running = True
     while running:
         leaderboard_screen.fill(must)
@@ -179,7 +187,7 @@ def display_leaderboard():
                 if event.key == pygame.K_ESCAPE:
                     running = False
 
-        # Display the scores
+# Kuvab skoorid(parim esimene jn)
         for i, score in enumerate(scores):
             score_text = font.render(f"{i + 1}. {score}", True, valge)
             leaderboard_screen.blit(score_text, (ekraani_laius // 2 - score_text.get_width() // 2, 50 + i * 40))
