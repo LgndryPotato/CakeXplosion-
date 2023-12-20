@@ -11,3 +11,4 @@
 ![hyperpruun5](https://github.com/LgndryPotato/CakeXplosion-/assets/144528378/63dfb982-d781-4c8c-b318-406ab04155c8)
 ![hyperpruun4](https://github.com/LgndryPotato/CakeXplosion-/assets/144528378/c46735eb-f2f6-4adf-947a-dd2fa23f6cce)
 ![hyperpruun3](https://github.com/LgndryPotato/CakeXplosion-/assets/144528378/58cbb007-4cee-4aa9-9116-7eadfb694b27)
+![sprinkles](https://github.com/LgndryPotato/CakeXplosion-/assets/144528378/900312d3-c43f-43f3-af6c-92ae8835c50a)
