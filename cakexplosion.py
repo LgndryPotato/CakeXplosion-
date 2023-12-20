@@ -10,6 +10,7 @@ pygame.init()
 ekraani_laius, ekraan_korgus = 1280, 720
 valge = (255, 255, 255)
 must = (0, 0, 0)
+roosa = (255,192,203)
 font = "Arial"
 sõna_suurus = 36
 sõnu = 1
@@ -28,6 +29,7 @@ kookide_ikoonid_valged1 = pygame.transform.scale(pygame.image.load("hypervalge.p
 kookide_ikoonid_valged2 = pygame.transform.scale(pygame.image.load("hypervalge1.png"), (150, 150))
 kookide_ikoonid_valged3 = pygame.transform.scale(pygame.image.load("hypervalge2.png"), (150, 150))
 kookide_ikoonid_valged4 = pygame.transform.scale(pygame.image.load("hypervalge3.png"), (150, 150))
+sprinkles_ikoon = pygame.transform.scale(pygame.image.load("sprinkles.png"), (150, 150))
 
 kookide_ikoonide_list = [kookide_ikoonid_pruunid1, kookide_ikoonid_pruunid2, kookide_ikoonid_pruunid3, kookide_ikoonid_pruunid4,
                                  kookide_ikoonid_pruunid5, kookide_ikoonid_pruunid6, kookide_ikoonid_pruunid7, kookide_ikoonid_pruunid8,
@@ -148,8 +150,8 @@ def main_menu():
 
         # main menu pilt jms
         ekraan.blit(backgrounds_tumedad8, (0, 0))
-        pygame.draw.rect(ekraan, valge, start_button)
-        pygame.draw.rect(ekraan, valge, leaderboard_button)
+        pygame.draw.rect(ekraan, roosa, start_button)
+        pygame.draw.rect(ekraan, roosa, leaderboard_button)
 
         # nuppude teksti joonistamine
         ekraan.blit(start_tekst, (start_button.x + start_button.width // 2 - start_tekst.get_width() // 2,
@@ -259,12 +261,18 @@ def game_loop():
             elif sõna["y"] > ekraan_korgus:
                 elud -= 1
                 sõnad_ekraanil.remove(sõna)
-
-        input_surface = font.render(sisend, True, valge)
-        ekraan.blit(input_surface, (10, ekraan_korgus - sõna_suurus))
-
-        skoor_surface = font.render("Skoor: {}".format(skoor), True, valge)
-        ekraan.blit(skoor_surface, (10, 10))
+        if level == 1 or level == 3 or level == 5 or level == 7 or level == 9 or level == 11 or level == 13 or level == 15:
+            input_surface = font.render(sisend, True, valge)
+            ekraan.blit(input_surface, (10, ekraan_korgus - sõna_suurus))
+        else:
+            input_surface = font.render(sisend, True, must)
+            ekraan.blit(input_surface, (10, ekraan_korgus - sõna_suurus))
+        if level == 1 or level == 3 or level == 5 or level == 7 or level == 9 or level == 11 or level == 13 or level == 15:
+            skoor_surface = font.render("Skoor: {}".format(skoor), True, valge)
+            ekraan.blit(skoor_surface, (10, 10))
+        else:
+            skoor_surface = font.render("Skoor: {}".format(skoor), True, must)
+            ekraan.blit(skoor_surface, (10, 10))
 
         elud_surface = font.render("Elud: {}".format(elud), True, valge)
         ekraan.blit(elud_surface, (1190, 690))
@@ -273,15 +281,21 @@ def game_loop():
         if skoor >= level * 10:
             level += 1
             kiirus += 0.5  # iga leveliga suureneb kukkumise kiirus
-
-        mitmes_level = font.render("Level: {}".format(level), True, valge)
-        ekraan.blit(mitmes_level, (ekraani_laius - 100, 10))
-
+        if level == 1 or level == 3 or level == 5 or level == 7 or level == 9 or level == 11 or level == 13 or level == 15:
+            mitmes_level = font.render("Level: {}".format(level), True, valge)
+            ekraan.blit(mitmes_level, (ekraani_laius - 100, 10))
+        else:
+            mitmes_level = font.render("Level: {}".format(level), True, must)
+            ekraan.blit(mitmes_level, (ekraani_laius - 100, 10))
         # kontrolli kas mäng läbi. Kui -1 punkti ehk alla 0 punkti siis mäng labi
         if elud <= 0:
             font_kaotus = pygame.font.Font(None, 72)
-            kaotus = font_kaotus.render("Kaotasid mängu!", True, valge)
-            ekraan.blit(kaotus, (ekraani_laius // 2 - 200, ekraan_korgus // 2))
+            if level == 1 or level == 3 or level == 5 or level == 7 or level == 9 or level == 11 or level == 13 or level == 15:
+                kaotus = font_kaotus.render("Kaotasid mängu!", True, valge)
+                ekraan.blit(kaotus, (ekraani_laius // 2 - 200, ekraan_korgus // 2))
+            else:
+                kaotus = font_kaotus.render("Kaotasid mängu!", True, must)
+                ekraan.blit(kaotus, (ekraani_laius // 2 - 200, ekraan_korgus // 2))
             pygame.display.flip()
             pygame.time.wait(3000)  # näitab kaotuse ekraani 3 sekundit
             programm_töötab = False
